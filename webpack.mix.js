@@ -12,4 +12,7 @@ const mix = require('laravel-mix');
  */
 // 已经处理静态文件浏览器缓存问题，修改此文件后需要 npm run watch-poll
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css').version();
+  .sass('resources/sass/app.scss', 'public/css')
+  .version()
+  .copyDirectory('resources/editor/js', 'public/js')
+  .copyDirectory('resources/editor/css', 'public/css');
